@@ -62,6 +62,8 @@ Those command arguments must be the actual returned values, not the illustrative
 
 See [the tests](tests/test_evidence_lab.py) for tampering, truncation, path/symlink, timestamp, source-preservation and cross-source timeline checks. [The example report](examples/report.json) and [timeline](examples/timeline.csv) are actual outputs from the supplied synthetic scenario.
 
+The [method and review worksheet](docs/method-and-review.md) explains the lab procedure, provenance checks and limits on conclusions.
+
 ## Attribution
 
 Requested by Aman Kumar Sah and implemented with Codex assistance on 29 October 2026. Test and demonstration execution were performed by the coding agent. The repository is dated new work; it makes no claim that the owner independently wrote every line or operated commercial forensic tools.

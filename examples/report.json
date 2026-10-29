@@ -1,0 +1,12 @@
+{
+  "case_id": "SYNTHETIC-001",
+  "generated_at": "2026-10-29T19:33:08.324310+00:00",
+  "tool_version": "0.1.0",
+  "records": 4,
+  "unsupported_files": [
+    "training-notes.txt"
+  ],
+  "integrity": "Verified against case hashes; independent authenticity requires externally retained anchors.",
+  "source_time_warning": "Source timestamps are untrusted claims; ordering does not establish causation.",
+  "scope": "Educational file triage; no disk imaging, deleted recovery, device unlocking or legal admissibility claim."
+}

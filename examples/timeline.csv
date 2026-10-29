@@ -1,0 +1,5 @@
+timestamp,action,detail,source,source_record,source_sha256
+2026-10-01T09:01:00+00:00,login,Fictional account signed in from documentation IP 192.0.2.7,cloud-audit.csv,2,024ae5818e99473953bd57fb21a0256f7445ac49012a2408d6ca22e87bfa50eb
+2026-10-01T09:02:00+00:00,message,Fictional message: download the training notes,mobile-export.jsonl,1,3bca5f6954a343f9c64f131d8c91da36c0af1f9a7ed25e22a29055b98947859f
+2026-10-01T09:03:00+00:00,download,Fictional account downloaded training-notes.txt,cloud-audit.csv,1,024ae5818e99473953bd57fb21a0256f7445ac49012a2408d6ca22e87bfa50eb
+2026-10-01T09:04:00+00:00,visit,https://example.test/training-notes,browser-export.sqlite,1,59960bff44a5e75a82e9d0f9813f7ee8f9b7ddfd05f270e1bd4c559543f3e0df

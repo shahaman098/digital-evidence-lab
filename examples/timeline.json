@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": "2026-10-01T09:01:00+00:00",
+    "action": "login",
+    "detail": "Fictional account signed in from documentation IP 192.0.2.7",
+    "source": "cloud-audit.csv",
+    "source_record": 2,
+    "source_sha256": "024ae5818e99473953bd57fb21a0256f7445ac49012a2408d6ca22e87bfa50eb"
+  },
+  {
+    "timestamp": "2026-10-01T09:02:00+00:00",
+    "action": "message",
+    "detail": "Fictional message: download the training notes",
+    "source": "mobile-export.jsonl",
+    "source_record": 1,
+    "source_sha256": "3bca5f6954a343f9c64f131d8c91da36c0af1f9a7ed25e22a29055b98947859f"
+  },
+  {
+    "timestamp": "2026-10-01T09:03:00+00:00",
+    "action": "download",
+    "detail": "Fictional account downloaded training-notes.txt",
+    "source": "cloud-audit.csv",
+    "source_record": 1,
+    "source_sha256": "024ae5818e99473953bd57fb21a0256f7445ac49012a2408d6ca22e87bfa50eb"
+  },
+  {
+    "timestamp": "2026-10-01T09:04:00+00:00",
+    "action": "visit",
+    "detail": "https://example.test/training-notes",
+    "source": "browser-export.sqlite",
+    "source_record": 1,
+    "source_sha256": "59960bff44a5e75a82e9d0f9813f7ee8f9b7ddfd05f270e1bd4c559543f3e0df"
+  }
+]

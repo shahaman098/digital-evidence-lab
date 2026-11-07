@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "digital-evidence-lab"
+dynamic = ["version"]
+description = "Educational logical evidence collection, integrity verification and timeline analysis on synthetic data"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Aman Kumar Sah"}]
+keywords = ["digital forensics", "education", "chain of custody", "timeline analysis"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+    "Topic :: Education",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff>=0.6", "mypy>=1.11", "coverage>=7.6", "build>=1.2"]
+
+[project.scripts]
+evidence-lab = "evidence_lab.cli:main"
+
+[tool.setuptools]
+packages = ["evidence_lab"]
+
+[tool.setuptools.dynamic]
+version = {attr = "evidence_lab.core.VERSION"}
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "W", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["evidence_lab"]
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+[tool.coverage.run]
+source = ["evidence_lab"]
+omit = ["evidence_lab/__main__.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+]

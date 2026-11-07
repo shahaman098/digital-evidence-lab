@@ -4,6 +4,27 @@ __pycache__/
 demo-source/
 demo-case/
 demo-analysis/
+demo-hashset.csv
 .DS_Store
 .runs/
 demo-*-result.json
+build/
+dist/
+*.egg-info/
+.coverage
+
+# auto-added 2026-11-07 (junk dirs)
+node_modules/
+__pycache__/
+.venv/
+venv/
+*-venv/
+env/
+.tox/
+dist/
+build/
+.next/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.DS_Store

@@ -1,5 +1,27 @@
 [
   {
+    "timestamp": "2026-10-01T08:31:00+00:00",
+    "action": "device-agent",
+    "detail": "Fictional device sync started",
+    "source": "device.log",
+    "source_record": 1,
+    "source_sha256": "6118f26a1fb12fc3bc4574ff57467451f7694fadfa0438f3a57c548ba4366f0b",
+    "extra": {
+      "host": "lab-device"
+    }
+  },
+  {
+    "timestamp": "2026-10-01T08:32:30+00:00",
+    "action": "device-agent",
+    "detail": "Fictional device sync completed",
+    "source": "device.log",
+    "source_record": 2,
+    "source_sha256": "6118f26a1fb12fc3bc4574ff57467451f7694fadfa0438f3a57c548ba4366f0b",
+    "extra": {
+      "host": "lab-device"
+    }
+  },
+  {
     "timestamp": "2026-10-01T09:01:00+00:00",
     "action": "login",
     "detail": "Fictional account signed in from documentation IP 192.0.2.7",
@@ -28,7 +50,82 @@
     "action": "visit",
     "detail": "https://example.test/training-notes",
     "source": "browser-export.sqlite",
+    "source_record": "events#1",
+    "source_sha256": "91a2a77f5a9cddff29d87caa682e067eae918f2d89f980cc5ce87c1b49f56da4"
+  },
+  {
+    "timestamp": "2026-10-01T09:06:00+00:00",
+    "action": "download",
+    "detail": "Fictional saved copy of the training notes",
+    "source": "browser-export.sqlite",
+    "source_record": "downloads#1",
+    "source_sha256": "91a2a77f5a9cddff29d87caa682e067eae918f2d89f980cc5ce87c1b49f56da4"
+  },
+  {
+    "timestamp": "2026-10-01T09:08:00+00:00",
+    "action": "visit",
+    "detail": "https://example.test/dashboard",
+    "source": "archive-export.zip",
+    "source_record": "visits.csv#1",
+    "source_sha256": "8f97ac0ff890745a631350e4490eb3d123925a30d354f02364471fbfd7311c48",
+    "extra": {
+      "member": "visits.csv"
+    }
+  },
+  {
+    "timestamp": "2026-10-01T09:10:00+00:00",
+    "action": "email",
+    "detail": "Training notes follow-up",
+    "source": "mail-export.mbox",
     "source_record": 1,
-    "source_sha256": "59960bff44a5e75a82e9d0f9813f7ee8f9b7ddfd05f270e1bd4c559543f3e0df"
+    "source_sha256": "42fc337be7b55fa2075096d7dab0fdee123e156bf3c3e5bb35e3c7d028bc78cc",
+    "extra": {
+      "from": "Trainer <trainer@example.test>",
+      "to": "staff@example.test",
+      "message_id": "<demo-1@example.test>"
+    }
+  },
+  {
+    "timestamp": "2026-10-01T11:45:00+00:00",
+    "action": "visit",
+    "detail": "https://example.test/wiki/training",
+    "source": "archive-export.zip",
+    "source_record": "visits.csv#2",
+    "source_sha256": "8f97ac0ff890745a631350e4490eb3d123925a30d354f02364471fbfd7311c48",
+    "extra": {
+      "member": "visits.csv"
+    }
+  },
+  {
+    "timestamp": "2026-10-01T11:46:12+00:00",
+    "action": "GET",
+    "detail": "GET /training-notes HTTP/1.1 200 512",
+    "source": "web-server.log",
+    "source_record": 1,
+    "source_sha256": "bd2a001a8ecd2d23b92e00ce9803686ca7c5962fdf27d1b01209c007d9f9521e",
+    "extra": {
+      "client_ip": "192.0.2.7",
+      "user": "-",
+      "status": "200",
+      "bytes": "512",
+      "referrer": "-",
+      "user_agent": "FictionalAgent/1.0"
+    }
+  },
+  {
+    "timestamp": "2026-10-01T11:47:05+00:00",
+    "action": "GET",
+    "detail": "GET /style.css HTTP/1.1 200 48",
+    "source": "web-server.log",
+    "source_record": 2,
+    "source_sha256": "bd2a001a8ecd2d23b92e00ce9803686ca7c5962fdf27d1b01209c007d9f9521e",
+    "extra": {
+      "client_ip": "192.0.2.9",
+      "user": "-",
+      "status": "200",
+      "bytes": "48",
+      "referrer": "-",
+      "user_agent": "FictionalAgent/1.0"
+    }
   }
 ]

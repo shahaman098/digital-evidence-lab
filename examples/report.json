@@ -1,12 +1,427 @@
 {
+  "schema": "digital-evidence-lab.report.v2",
   "case_id": "SYNTHETIC-001",
-  "generated_at": "2026-10-29T19:33:08.324310+00:00",
-  "tool_version": "0.1.0",
-  "records": 4,
+  "generated_at": "2026-11-02T00:27:21.650512+00:00",
+  "tool_version": "0.3.0",
+  "records": 12,
   "unsupported_files": [
     "training-notes.txt"
   ],
   "integrity": "Verified against case hashes; independent authenticity requires externally retained anchors.",
   "source_time_warning": "Source timestamps are untrusted claims; ordering does not establish causation.",
-  "scope": "Educational file triage; no disk imaging, deleted recovery, device unlocking or legal admissibility claim."
+  "scope": "Educational file triage; no disk imaging, deleted recovery, device unlocking or legal admissibility claim.",
+  "field_mappings": {
+    "archive-export.zip": {
+      "container": "zip",
+      "members": [
+        {
+          "member": "visits.csv",
+          "records": 2,
+          "format": "auto-detected"
+        }
+      ]
+    },
+    "browser-export.sqlite": {
+      "tables": [
+        {
+          "table": "downloads",
+          "records": 1,
+          "mapping": {
+            "timestamp": "timestamp",
+            "action": "action",
+            "detail": "detail",
+            "extra": [],
+            "strategy": "auto-detected",
+            "columns": [
+              "timestamp",
+              "action",
+              "detail"
+            ]
+          }
+        },
+        {
+          "table": "events",
+          "records": 1,
+          "mapping": {
+            "timestamp": "timestamp",
+            "action": "action",
+            "detail": "detail",
+            "extra": [],
+            "strategy": "auto-detected",
+            "columns": [
+              "timestamp",
+              "action",
+              "detail"
+            ]
+          }
+        }
+      ]
+    },
+    "cloud-audit.csv": {
+      "timestamp": "timestamp",
+      "action": "action",
+      "detail": "detail",
+      "extra": [],
+      "strategy": "auto-detected",
+      "columns": [
+        "timestamp",
+        "action",
+        "detail"
+      ]
+    },
+    "device.log": {
+      "format": "syslog"
+    },
+    "mail-export.mbox": {
+      "format": "mbox",
+      "messages": 1
+    },
+    "mobile-export.jsonl": {
+      "timestamp": "timestamp",
+      "action": "action",
+      "detail": "detail",
+      "extra": [],
+      "strategy": "auto-detected",
+      "columns": [
+        "timestamp",
+        "action",
+        "detail"
+      ]
+    },
+    "web-server.log": {
+      "format": "apache-combined"
+    }
+  },
+  "timestamp_assumptions": {},
+  "file_classifications": {
+    "hashset": "demo-hashset.csv",
+    "hashset_entries": 1,
+    "matched": [
+      {
+        "path": "browser-export.sqlite",
+        "sha256": "91a2a77f5a9cddff29d87caa682e067eae918f2d89f980cc5ce87c1b49f56da4",
+        "labels": [
+          "synthetic-browser-fixture"
+        ],
+        "notes": "Created by make_demo for the demo flow"
+      }
+    ],
+    "unmatched_case_files": 7
+  },
+  "analysis": {
+    "summary": {
+      "records": 12,
+      "files": 7,
+      "first": "2026-10-01T08:31:00+00:00",
+      "last": "2026-10-01T11:47:05+00:00",
+      "per_source": {
+        "archive-export.zip": 2,
+        "browser-export.sqlite": 2,
+        "cloud-audit.csv": 2,
+        "device.log": 2,
+        "mail-export.mbox": 1,
+        "mobile-export.jsonl": 1,
+        "web-server.log": 2
+      },
+      "per_action": {
+        "GET": 2,
+        "device-agent": 2,
+        "download": 2,
+        "email": 1,
+        "login": 1,
+        "message": 1,
+        "visit": 3
+      }
+    },
+    "entities": {
+      "ipv4": [
+        {
+          "value": "192.0.2.7",
+          "count": 2,
+          "first_seen": "2026-10-01T09:01:00+00:00",
+          "last_seen": "2026-10-01T11:46:12+00:00",
+          "examples": [
+            {
+              "source": "cloud-audit.csv",
+              "source_record": 2
+            },
+            {
+              "source": "web-server.log",
+              "source_record": 1
+            }
+          ]
+        },
+        {
+          "value": "192.0.2.9",
+          "count": 1,
+          "first_seen": "2026-10-01T11:47:05+00:00",
+          "last_seen": "2026-10-01T11:47:05+00:00",
+          "examples": [
+            {
+              "source": "web-server.log",
+              "source_record": 2
+            }
+          ]
+        }
+      ],
+      "domain": [
+        {
+          "value": "example.test",
+          "count": 6,
+          "first_seen": "2026-10-01T09:04:00+00:00",
+          "last_seen": "2026-10-01T11:45:00+00:00",
+          "examples": [
+            {
+              "source": "browser-export.sqlite",
+              "source_record": "events#1"
+            },
+            {
+              "source": "archive-export.zip",
+              "source_record": "visits.csv#1"
+            },
+            {
+              "source": "mail-export.mbox",
+              "source_record": 1
+            }
+          ]
+        },
+        {
+          "value": "visits.csv",
+          "count": 2,
+          "first_seen": "2026-10-01T09:08:00+00:00",
+          "last_seen": "2026-10-01T11:45:00+00:00",
+          "examples": [
+            {
+              "source": "archive-export.zip",
+              "source_record": "visits.csv#1"
+            },
+            {
+              "source": "archive-export.zip",
+              "source_record": "visits.csv#2"
+            }
+          ]
+        },
+        {
+          "value": "style.css",
+          "count": 1,
+          "first_seen": "2026-10-01T11:47:05+00:00",
+          "last_seen": "2026-10-01T11:47:05+00:00",
+          "examples": [
+            {
+              "source": "web-server.log",
+              "source_record": 2
+            }
+          ]
+        },
+        {
+          "value": "training-notes.txt",
+          "count": 1,
+          "first_seen": "2026-10-01T09:03:00+00:00",
+          "last_seen": "2026-10-01T09:03:00+00:00",
+          "examples": [
+            {
+              "source": "cloud-audit.csv",
+              "source_record": 1
+            }
+          ]
+        }
+      ],
+      "url": [
+        {
+          "value": "https://example.test/dashboard",
+          "count": 1,
+          "first_seen": "2026-10-01T09:08:00+00:00",
+          "last_seen": "2026-10-01T09:08:00+00:00",
+          "examples": [
+            {
+              "source": "archive-export.zip",
+              "source_record": "visits.csv#1"
+            }
+          ]
+        },
+        {
+          "value": "https://example.test/training-notes",
+          "count": 1,
+          "first_seen": "2026-10-01T09:04:00+00:00",
+          "last_seen": "2026-10-01T09:04:00+00:00",
+          "examples": [
+            {
+              "source": "browser-export.sqlite",
+              "source_record": "events#1"
+            }
+          ]
+        },
+        {
+          "value": "https://example.test/wiki/training",
+          "count": 1,
+          "first_seen": "2026-10-01T11:45:00+00:00",
+          "last_seen": "2026-10-01T11:45:00+00:00",
+          "examples": [
+            {
+              "source": "archive-export.zip",
+              "source_record": "visits.csv#2"
+            }
+          ]
+        }
+      ],
+      "email": [
+        {
+          "value": "demo-1@example.test",
+          "count": 1,
+          "first_seen": "2026-10-01T09:10:00+00:00",
+          "last_seen": "2026-10-01T09:10:00+00:00",
+          "examples": [
+            {
+              "source": "mail-export.mbox",
+              "source_record": 1
+            }
+          ]
+        },
+        {
+          "value": "staff@example.test",
+          "count": 1,
+          "first_seen": "2026-10-01T09:10:00+00:00",
+          "last_seen": "2026-10-01T09:10:00+00:00",
+          "examples": [
+            {
+              "source": "mail-export.mbox",
+              "source_record": 1
+            }
+          ]
+        },
+        {
+          "value": "trainer@example.test",
+          "count": 1,
+          "first_seen": "2026-10-01T09:10:00+00:00",
+          "last_seen": "2026-10-01T09:10:00+00:00",
+          "examples": [
+            {
+              "source": "mail-export.mbox",
+              "source_record": 1
+            }
+          ]
+        }
+      ]
+    },
+    "histogram": [
+      {
+        "hour": "2026-10-01T08:00:00+00:00",
+        "records": 2
+      },
+      {
+        "hour": "2026-10-01T09:00:00+00:00",
+        "records": 7
+      },
+      {
+        "hour": "2026-10-01T10:00:00+00:00",
+        "records": 0
+      },
+      {
+        "hour": "2026-10-01T11:00:00+00:00",
+        "records": 3
+      }
+    ],
+    "keywords": [
+      {
+        "term": "training",
+        "regex": false,
+        "count": 7,
+        "matches": [
+          {
+            "timestamp": "2026-10-01T09:02:00+00:00",
+            "source": "mobile-export.jsonl",
+            "source_record": 1,
+            "field": "detail",
+            "excerpt": "Fictional message: download the training notes"
+          },
+          {
+            "timestamp": "2026-10-01T09:03:00+00:00",
+            "source": "cloud-audit.csv",
+            "source_record": 1,
+            "field": "detail",
+            "excerpt": "Fictional account downloaded training-notes.txt"
+          },
+          {
+            "timestamp": "2026-10-01T09:04:00+00:00",
+            "source": "browser-export.sqlite",
+            "source_record": "events#1",
+            "field": "detail",
+            "excerpt": "https://example.test/training-notes"
+          },
+          {
+            "timestamp": "2026-10-01T09:06:00+00:00",
+            "source": "browser-export.sqlite",
+            "source_record": "downloads#1",
+            "field": "detail",
+            "excerpt": "Fictional saved copy of the training notes"
+          },
+          {
+            "timestamp": "2026-10-01T09:10:00+00:00",
+            "source": "mail-export.mbox",
+            "source_record": 1,
+            "field": "detail",
+            "excerpt": "Training notes follow-up"
+          },
+          {
+            "timestamp": "2026-10-01T11:45:00+00:00",
+            "source": "archive-export.zip",
+            "source_record": "visits.csv#2",
+            "field": "detail",
+            "excerpt": "https://example.test/wiki/training"
+          },
+          {
+            "timestamp": "2026-10-01T11:46:12+00:00",
+            "source": "web-server.log",
+            "source_record": 1,
+            "field": "detail",
+            "excerpt": "GET /training-notes HTTP/1.1 200 512"
+          }
+        ],
+        "matches_truncated": false
+      }
+    ],
+    "sessions": {
+      "gap_seconds": 1800,
+      "count": 2,
+      "sessions": [
+        {
+          "start": "2026-10-01T08:31:00+00:00",
+          "end": "2026-10-01T09:10:00+00:00",
+          "records": 9
+        },
+        {
+          "start": "2026-10-01T11:45:00+00:00",
+          "end": "2026-10-01T11:47:05+00:00",
+          "records": 3
+        }
+      ],
+      "largest_gaps": [
+        {
+          "after": "2026-10-01T09:10:00+00:00",
+          "before": "2026-10-01T11:45:00+00:00",
+          "seconds": 9300.0
+        },
+        {
+          "after": "2026-10-01T08:32:30+00:00",
+          "before": "2026-10-01T09:01:00+00:00",
+          "seconds": 1710.0
+        },
+        {
+          "after": "2026-10-01T09:08:00+00:00",
+          "before": "2026-10-01T09:10:00+00:00",
+          "seconds": 120.0
+        },
+        {
+          "after": "2026-10-01T09:06:00+00:00",
+          "before": "2026-10-01T09:08:00+00:00",
+          "seconds": 120.0
+        },
+        {
+          "after": "2026-10-01T09:04:00+00:00",
+          "before": "2026-10-01T09:06:00+00:00",
+          "seconds": 120.0
+        }
+      ]
+    }
+  }
 }

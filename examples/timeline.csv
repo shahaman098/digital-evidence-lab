@@ -1,5 +1,13 @@
-timestamp,action,detail,source,source_record,source_sha256
-2026-10-01T09:01:00+00:00,login,Fictional account signed in from documentation IP 192.0.2.7,cloud-audit.csv,2,024ae5818e99473953bd57fb21a0256f7445ac49012a2408d6ca22e87bfa50eb
-2026-10-01T09:02:00+00:00,message,Fictional message: download the training notes,mobile-export.jsonl,1,3bca5f6954a343f9c64f131d8c91da36c0af1f9a7ed25e22a29055b98947859f
-2026-10-01T09:03:00+00:00,download,Fictional account downloaded training-notes.txt,cloud-audit.csv,1,024ae5818e99473953bd57fb21a0256f7445ac49012a2408d6ca22e87bfa50eb
-2026-10-01T09:04:00+00:00,visit,https://example.test/training-notes,browser-export.sqlite,1,59960bff44a5e75a82e9d0f9813f7ee8f9b7ddfd05f270e1bd4c559543f3e0df
+timestamp,action,detail,source,source_record,source_sha256,extra
+2026-10-01T08:31:00+00:00,device-agent,Fictional device sync started,device.log,1,6118f26a1fb12fc3bc4574ff57467451f7694fadfa0438f3a57c548ba4366f0b,"{""host"": ""lab-device""}"
+2026-10-01T08:32:30+00:00,device-agent,Fictional device sync completed,device.log,2,6118f26a1fb12fc3bc4574ff57467451f7694fadfa0438f3a57c548ba4366f0b,"{""host"": ""lab-device""}"
+2026-10-01T09:01:00+00:00,login,Fictional account signed in from documentation IP 192.0.2.7,cloud-audit.csv,2,024ae5818e99473953bd57fb21a0256f7445ac49012a2408d6ca22e87bfa50eb,
+2026-10-01T09:02:00+00:00,message,Fictional message: download the training notes,mobile-export.jsonl,1,3bca5f6954a343f9c64f131d8c91da36c0af1f9a7ed25e22a29055b98947859f,
+2026-10-01T09:03:00+00:00,download,Fictional account downloaded training-notes.txt,cloud-audit.csv,1,024ae5818e99473953bd57fb21a0256f7445ac49012a2408d6ca22e87bfa50eb,
+2026-10-01T09:04:00+00:00,visit,https://example.test/training-notes,browser-export.sqlite,events#1,91a2a77f5a9cddff29d87caa682e067eae918f2d89f980cc5ce87c1b49f56da4,
+2026-10-01T09:06:00+00:00,download,Fictional saved copy of the training notes,browser-export.sqlite,downloads#1,91a2a77f5a9cddff29d87caa682e067eae918f2d89f980cc5ce87c1b49f56da4,
+2026-10-01T09:08:00+00:00,visit,https://example.test/dashboard,archive-export.zip,visits.csv#1,8f97ac0ff890745a631350e4490eb3d123925a30d354f02364471fbfd7311c48,"{""member"": ""visits.csv""}"
+2026-10-01T09:10:00+00:00,email,Training notes follow-up,mail-export.mbox,1,42fc337be7b55fa2075096d7dab0fdee123e156bf3c3e5bb35e3c7d028bc78cc,"{""from"": ""Trainer <trainer@example.test>"", ""message_id"": ""<demo-1@example.test>"", ""to"": ""staff@example.test""}"
+2026-10-01T11:45:00+00:00,visit,https://example.test/wiki/training,archive-export.zip,visits.csv#2,8f97ac0ff890745a631350e4490eb3d123925a30d354f02364471fbfd7311c48,"{""member"": ""visits.csv""}"
+2026-10-01T11:46:12+00:00,GET,GET /training-notes HTTP/1.1 200 512,web-server.log,1,bd2a001a8ecd2d23b92e00ce9803686ca7c5962fdf27d1b01209c007d9f9521e,"{""bytes"": ""512"", ""client_ip"": ""192.0.2.7"", ""referrer"": ""-"", ""status"": ""200"", ""user"": ""-"", ""user_agent"": ""FictionalAgent/1.0""}"
+2026-10-01T11:47:05+00:00,GET,GET /style.css HTTP/1.1 200 48,web-server.log,2,bd2a001a8ecd2d23b92e00ce9803686ca7c5962fdf27d1b01209c007d9f9521e,"{""bytes"": ""48"", ""client_ip"": ""192.0.2.9"", ""referrer"": ""-"", ""status"": ""200"", ""user"": ""-"", ""user_agent"": ""FictionalAgent/1.0""}"
